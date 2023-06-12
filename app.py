@@ -14,7 +14,7 @@ G = nx.Graph()
 for row in df_edges.iterrows():
   G.add_edge(row[1]["hero1"], row[1]["hero2"])
 
-hero_network = Network(height="600px", width="100%", notebook=True, font_color="black", heading='Hero Network')
+hero_network = Network(height="600px", width="100%", notebook=True, font_color="black", heading='Hero Network', cdn_resources='in_line')
 hero_network.from_nx(G)
 
 adj_list = hero_network.get_adj_list()
