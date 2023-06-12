@@ -1,4 +1,4 @@
-! pip install pyvis
+pip install pyvis
 from pyvis.network import Network
 import networkx as nx
 import pandas as pd
