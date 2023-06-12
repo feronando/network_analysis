@@ -14,8 +14,13 @@ G = nx.Graph()
 for row in df_edges.iterrows():
   G.add_edge(row[1]["hero1"], row[1]["hero2"])
 
-hero_network = Network(height="600px", width="100%", font_color="black", heading='Hero Network')
+hero_network = Network(height="600px", width="100%", notebook=True, font_color="black", heading='Hero Network')
 hero_network.from_nx(G)
+
+adj_list = hero_network.get_adj_list()
+for node in hero_network.nodes:
+  node["title"] = " Neighbors:<br>" + "<br>".join(adj_list[node["id"]])
+  node["value"] = len(adj_list[node["id"]])
 
 hero_network.show_buttons(filter_=['physics'])
 hero_network.show('hero_network.html')
