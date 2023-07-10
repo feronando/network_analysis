@@ -17,8 +17,8 @@ G = nx.DiGraph()
 for row in df_articles.iterrows():
   G.add_node(unquote(row[1]["article"]), category=[])
 
-for row in df_categories.iterrows():
-  G.nodes[unquote(row[1]["article"])]["category"].append(unquote(row[1]["category"]))
+# for row in df_categories.iterrows():
+#   G.nodes[unquote(row[1]["article"])]["category"].append(unquote(row[1]["category"]))
 
 for row in df_links.iterrows():
   G.add_edge(unquote(row[1]["linkSource"]), unquote(row[1]["linkTarget"]))
